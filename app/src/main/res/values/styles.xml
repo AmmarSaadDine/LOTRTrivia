@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorQuestionText</item>
+        <item name="android:textViewStyle">@style/fontTextView</item>
+        <item name="android:radioButtonStyle">@style/MyRadioButton</item>
+        <item name="android:buttonStyle">@style/MyButton</item>
+    </style>
+
+    <style name="fontTextView" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
+        <item name="android:textColor">@color/colorQuestionText</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="MyRadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/default_radio_button</item>
+        <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
+        <item name="android:textColor">@color/colorQuestionText</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="MyButton" parent="@android:style/Widget.Button">
+        <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@drawable/default_button</item>
+        <item name="android:padding">@dimen/buttonPadding</item>
+    </style>
+</resources>

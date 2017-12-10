@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">LORD OF THE RINGS TRIVIA</string>
+
+    <!--question 2-->
+    <string name="q1">How many rings of power were created?</string>
+    <string name="q1a1">16</string>
+    <string name="q1a2">20</string>
+
+    <!--question 2-->
+    <string name="q2">How many wizards were in Middle Earth?</string>
+    <string name="q2a1">5</string>
+    <string name="q2a2">8</string>
+
+    <!--question 3-->
+    <string name="q3">How many members the Nazgûls consists of?</string>
+    <string name="q3a1">7</string>
+    <string name="q3a2">9</string>
+
+    <!--question 4-->
+    <string name="q4">Who killed the Witch-king?</string>
+    <string name="q4a1">Éowyn the shield maiden</string>
+    <string name="q4a2">Arwen Undómiel</string>
+
+
+    <!--question 5-->
+    <string name="q5">Who created the 3 Rings of the Elves?</string>
+    <string name="q5a1">Celebrimbor</string>
+    <string name="q5a2">Sauron</string>
+
+    <string name="submit">Answer</string>
+</resources>

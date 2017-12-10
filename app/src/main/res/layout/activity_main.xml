@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.androind.lortrivia.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/introImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:src="@drawable/intro" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_gradient_background"
+            android:orientation="vertical"
+            android:padding="@dimen/generalPadding">
+
+            <!-- question 1 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/q1" />
+
+            <ImageView
+                android:id="@+id/q1Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:scaleType="fitXY"
+                android:src="@drawable/ring" />
+
+            <RadioGroup
+                android:id="@+id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q1a1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q1a1" />
+
+                <RadioButton
+                    android:id="@+id/q1a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q1a2" />
+
+            </RadioGroup>
+
+            <!-- spacing view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/deviderHeight"
+                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
+                android:layout_marginVertical="@dimen/deviderVerticalMargin"
+                android:background="@color/colorAccent" />
+
+            <!-- question 2 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/q2" />
+
+            <ImageView
+                android:id="@+id/q2Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:scaleType="fitXY"
+                android:src="@drawable/wizards" />
+
+            <RadioGroup
+                android:id="@+id/q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q2a1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q2a1" />
+
+                <RadioButton
+                    android:id="@+id/q2a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q2a2" />
+
+            </RadioGroup>
+
+            <!-- spacing view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/deviderHeight"
+                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
+                android:layout_marginVertical="@dimen/deviderVerticalMargin"
+                android:background="@color/colorAccent" />
+
+            <!-- question 3 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/q3" />
+
+            <ImageView
+                android:id="@+id/q3Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:scaleType="fitXY"
+                android:src="@drawable/witch_king" />
+
+            <RadioGroup
+                android:id="@+id/q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q3a1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q3a1" />
+
+                <RadioButton
+                    android:id="@+id/q3a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q3a2" />
+
+            </RadioGroup>
+
+
+            <!-- spacing view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/deviderHeight"
+                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
+                android:layout_marginVertical="@dimen/deviderVerticalMargin"
+                android:background="@color/colorAccent" />
+
+            <!-- question 4 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/q4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/generalPadding">
+
+                <ImageView
+                    android:id="@+id/q4a1Image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/eowyn" />
+
+                <ImageView
+                    android:id="@+id/q4a2Image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/generalPadding"
+                    android:layout_weight="1"
+                    android:src="@drawable/arwen" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q4a1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q4a1" />
+
+                <RadioButton
+                    android:id="@+id/q4a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/q4a2" />
+
+            </RadioGroup>
+
+            <!-- spacing view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/deviderHeight"
+                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
+                android:layout_marginVertical="@dimen/deviderVerticalMargin"
+                android:background="@color/colorAccent" />
+
+            <!-- question 5 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/q5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/generalPadding">
+
+                <ImageView
+                    android:id="@+id/q5a1Image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/celebrimbor" />
+
+                <ImageView
+                    android:id="@+id/q5a2Image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/generalPadding"
+                    android:layout_weight="1"
+                    android:src="@drawable/sauron" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/q5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q5a1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:text="@string/q5a1" />
+
+                <RadioButton
+                    android:id="@+id/q5a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:text="@string/q5a2" />
+
+            </RadioGroup>
+
+            <!-- spacing view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/deviderHeight"
+                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
+                android:layout_marginVertical="@dimen/deviderVerticalMargin"
+                android:background="@color/colorAccent" />
+
+            <!-- submit button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activityVerticalMargin"
+                android:onClick="submit"
+                android:text="@string/submit"
+                android:textAllCaps="true" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

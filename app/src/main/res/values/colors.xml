@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#100E0E</color>
+    <color name="colorPrimaryDark">#2C2626</color>
+    <color name="colorAccent">#BABABA</color>
+    <color name="colorQuestionText">#BABABA</color>
+    <color name="colorIntroYellow">#FBB65B</color>
+</resources>
