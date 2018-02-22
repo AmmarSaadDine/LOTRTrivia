@@ -6,30 +6,59 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorQuestionText</item>
-        <item name="android:textViewStyle">@style/fontTextView</item>
+        <item name="android:textViewStyle">@style/MyTextView</item>
         <item name="android:radioButtonStyle">@style/MyRadioButton</item>
         <item name="android:buttonStyle">@style/MyButton</item>
+        <item name="android:checkboxStyle">@style/MyCheckBox</item>
+        <item name="android:editTextStyle">@style/MyEditText</item>
     </style>
 
-    <style name="fontTextView" parent="@android:style/Widget.TextView">
+    <style name="MyTextView" parent="@android:style/Widget.TextView">
         <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
         <item name="android:textColor">@color/colorQuestionText</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+    </style>
+
+    <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
+        <item name="android:textColor">@color/colorQuestionText</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:button">@drawable/default_check_box</item>
+        <item name="android:paddingLeft">@dimen/radioButtonInnerSpacing</item>
     </style>
 
     <style name="MyRadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:button">@drawable/default_radio_button</item>
         <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
         <item name="android:textColor">@color/colorQuestionText</item>
-        <item name="android:textSize">28sp</item>
-        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:paddingLeft">@dimen/radioButtonInnerSpacing</item>
     </style>
 
     <style name="MyButton" parent="@android:style/Widget.Button">
         <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
         <item name="android:background">@drawable/default_button</item>
         <item name="android:padding">@dimen/buttonPadding</item>
+    </style>
+
+    <style name="MyEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/morris_roman_alternate_black</item>
+        <item name="android:background">@drawable/default_edit_text_background</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:textColorHint">@color/colorEditTextHint</item>
+        <item name="android:padding">@dimen/generalPadding</item>
+    </style>
+
+    <style name="DividerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividerHeight</item>
+        <item name="android:layout_marginLeft">@dimen/dividerHorizontalMargin</item>
+        <item name="android:layout_marginRight">@dimen/dividerHorizontalMargin</item>
+        <item name="android:layout_marginTop">@dimen/dividerVerticalMargin</item>
+        <item name="android:layout_marginBottom">@dimen/dividerVerticalMargin</item>
+        <item name="android:background">@color/colorAccent</item>
     </style>
 </resources>

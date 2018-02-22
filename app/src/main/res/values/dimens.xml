@@ -2,11 +2,17 @@
 <resources>
     <dimen name="activityHorizontalMargin">16dp</dimen>
     <dimen name="activityVerticalMargin">16dp</dimen>
-    <dimen name="questiontextSize">18sp</dimen>
     <dimen name="generalPadding">16dp</dimen>
     <dimen name="questionAnswerVerticalMargin">16dp</dimen>
-    <dimen name="deviderHeight">2dp</dimen>
-    <dimen name="deviderVerticalMargin">16dp</dimen>
-    <dimen name="deviderHorizontalMargin">16dp</dimen>
-    <dimen name="buttonPadding">8dp</dimen>
+    <dimen name="dividerHeight">2dp</dimen>
+    <dimen name="dividerVerticalMargin">16dp</dimen>
+    <dimen name="dividerHorizontalMargin">16dp</dimen>
+    <dimen name="buttonPadding">16dp</dimen>
+    <dimen name="radioButtonInnerSpacing">8dp</dimen>
+    <dimen name="editTextCornerRadius">5dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="defaultTextSize">24sp</dimen>
+    <dimen name="buttonTextSize">24sp</dimen>
+
 </resources>

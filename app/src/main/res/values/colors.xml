@@ -4,5 +4,8 @@
     <color name="colorPrimaryDark">#2C2626</color>
     <color name="colorAccent">#BABABA</color>
     <color name="colorQuestionText">#BABABA</color>
-    <color name="colorIntroYellow">#FBB65B</color>
+    <color name="colorButtonBackground">#5D4037</color>
+    <color name="colorEditTextBackground">#3E2723</color>
+    <color name="colorEditTextHint">#BCAAA4</color>
+    <color name="colorButtonText">#BCAAA4</color>
 </resources>

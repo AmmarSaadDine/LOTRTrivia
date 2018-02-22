@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">LORD OF THE RINGS TRIVIA</string>
+    <string name="nickNameRequest">Please enter a nick name</string>
+    <string name="teaser">Can you answer these questions?</string>
 
-    <!--question 2-->
+    <!-- Check box questions and answers -->
+    <!--question 1-->
+    <string name="cbq1">Which of these races did receive rings of power?</string>
+    <string name="cbq1a1">Humans</string>
+    <string name="cbq1a2">Dwarfs</string>
+    <string name="cbq1a3">Goblins</string>
+    <string name="cbq1a4">Elves</string>
+
+    <!-- Radio buttons questions and answers -->
+    <!--question 1-->
     <string name="q1">How many rings of power were created?</string>
     <string name="q1a1">16</string>
     <string name="q1a2">20</string>
@@ -27,5 +38,11 @@
     <string name="q5a1">Celebrimbor</string>
     <string name="q5a2">Sauron</string>
 
-    <string name="submit">Answer</string>
+    <string name="submit">Check Answers</string>
+
+    <!-- Responses to score -->
+
+    <string name="responsePerfect">Congratz %s!! Perfect score %d/%d</string>
+    <string name="responseAlmostThere">Almost there %s! You scored %d/%d</string>
+    <string name="responseTryAgain">Try again %s! You scored %d/%d</string>
 </resources>

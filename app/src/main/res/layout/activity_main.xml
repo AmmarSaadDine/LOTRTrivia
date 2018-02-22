@@ -25,6 +25,73 @@
             android:orientation="vertical"
             android:padding="@dimen/generalPadding">
 
+            <!-- User nick name -->
+
+            <EditText
+                android:id="@+id/editText"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/generalPadding"
+                android:hint="@string/nickNameRequest" />
+
+            <!-- Teaser text -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/teaser"/>
+
+            <!-- spacing view -->
+            <View style="@style/DividerView" />
+
+            <!-- All questions -->
+
+            <!-- Check box questions -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/cbq1" />
+
+            <LinearLayout
+                android:id="@+id/cbq1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbq1a1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbq1a1" />
+
+                <CheckBox
+                    android:id="@+id/cbq1a2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbq1a2" />
+
+                <CheckBox
+                    android:id="@+id/cbq1a3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbq1a3" />
+
+                <CheckBox
+                    android:id="@+id/cbq1a4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbq1a4" />
+            </LinearLayout>
+
+            <!-- spacing view -->
+            <View style="@style/DividerView" />
+
+
+            <!-- Radio buttons questions -->
+
             <!-- question 1 -->
 
             <TextView
@@ -65,12 +132,8 @@
             </RadioGroup>
 
             <!-- spacing view -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/deviderHeight"
-                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
-                android:layout_marginVertical="@dimen/deviderVerticalMargin"
-                android:background="@color/colorAccent" />
+
+            <View style="@style/DividerView" />
 
             <!-- question 2 -->
 
@@ -112,12 +175,8 @@
             </RadioGroup>
 
             <!-- spacing view -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/deviderHeight"
-                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
-                android:layout_marginVertical="@dimen/deviderVerticalMargin"
-                android:background="@color/colorAccent" />
+
+            <View style="@style/DividerView" />
 
             <!-- question 3 -->
 
@@ -157,14 +216,9 @@
 
             </RadioGroup>
 
-
             <!-- spacing view -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/deviderHeight"
-                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
-                android:layout_marginVertical="@dimen/deviderVerticalMargin"
-                android:background="@color/colorAccent" />
+
+            <View style="@style/DividerView" />
 
             <!-- question 4 -->
 
@@ -218,12 +272,8 @@
             </RadioGroup>
 
             <!-- spacing view -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/deviderHeight"
-                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
-                android:layout_marginVertical="@dimen/deviderVerticalMargin"
-                android:background="@color/colorAccent" />
+
+            <View style="@style/DividerView" />
 
             <!-- question 5 -->
 
@@ -278,15 +328,13 @@
 
             </RadioGroup>
 
+
             <!-- spacing view -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/deviderHeight"
-                android:layout_marginHorizontal="@dimen/deviderHorizontalMargin"
-                android:layout_marginVertical="@dimen/deviderVerticalMargin"
-                android:background="@color/colorAccent" />
+
+            <View style="@style/DividerView" />
 
             <!-- submit button -->
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

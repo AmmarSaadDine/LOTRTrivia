@@ -1,33 +1,41 @@
 package com.example.androind.lortrivia;
 
-import android.content.DialogInterface;
-import android.media.Image;
-import android.os.Build;
-import android.support.v7.app.AlertDialog;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Map<Integer, Integer> questionsAnswers = new HashMap<>();
+    // A map representing the answers for the multiple choice questions (radio buttons groups questions)
+    private Map<Integer, Integer> radioButtonsQA = new HashMap<>();
+
+    // A map representing the answers for the check boxes questions (multiple answers are right)
+    private Map<Integer, List<Integer>> checkBoxQA = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initQAMap();
+        // init question/answers maps
+        initRadioButtonsQAMap();
+        initCheckBoxQAMap();
 
+        // Prepare all the images for the questions
         final ImageView introImageView = findViewById(R.id.introImage);
         final ImageView q1ImageView = findViewById(R.id.q1Image);
         final ImageView q2ImageView = findViewById(R.id.q2Image);
@@ -37,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView q5a1ImageView = findViewById(R.id.q5a1Image);
         final ImageView q5a2ImageView = findViewById(R.id.q5a2Image);
 
+        // The following block of code is to update the sizes of the images properly at run time depending on the current screen size
         introImageView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -76,61 +85,77 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+    private void initRadioButtonsQAMap() {
+        radioButtonsQA = new HashMap<>();
+        radioButtonsQA.put(R.id.q1, R.id.q1a2);
+        radioButtonsQA.put(R.id.q2, R.id.q2a1);
+        radioButtonsQA.put(R.id.q3, R.id.q3a2);
+        radioButtonsQA.put(R.id.q4, R.id.q4a1);
+        radioButtonsQA.put(R.id.q5, R.id.q5a1);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    private void initQAMap() {
-        questionsAnswers = new HashMap<>();
-        questionsAnswers.put(R.id.q1, R.id.q1a2);
-        questionsAnswers.put(R.id.q2, R.id.q2a1);
-        questionsAnswers.put(R.id.q3, R.id.q3a2);
-        questionsAnswers.put(R.id.q4, R.id.q4a1);
-        questionsAnswers.put(R.id.q5, R.id.q5a1);
+    private void initCheckBoxQAMap() {
+        checkBoxQA = new HashMap<>();
+        List<Integer> list1 = Arrays.asList(R.id.cbq1a1, R.id.cbq1a2, R.id.cbq1a4);
+        checkBoxQA.put(R.id.cbq1, list1);
     }
 
     private int getScore() {
         int score = 0;
 
-        for (Map.Entry<Integer, Integer> entry : questionsAnswers.entrySet()) {
+        // collect score for radio groups questions
+        for (Map.Entry<Integer, Integer> entry : radioButtonsQA.entrySet()) {
             RadioGroup questionGroup = findViewById(entry.getKey());
             if (questionGroup.getCheckedRadioButtonId() == entry.getValue()) {
                 score++;
             }
         }
+
+        // collect score for check boxes questions
+        for (Map.Entry<Integer, List<Integer>> entry : checkBoxQA.entrySet()) {
+            LinearLayout questionGroupView = findViewById(entry.getKey());
+            List<Integer> rightAnswers = entry.getValue();
+            List<Integer> currentAnswers = new ArrayList<>();
+            for (int i = 0; i < questionGroupView.getChildCount(); i++) {
+                CheckBox checkBox = (CheckBox) questionGroupView.getChildAt(i);
+                if (checkBox.isChecked()) {
+                    currentAnswers.add(checkBox.getId());
+                }
+            }
+            if (currentAnswers.equals(rightAnswers)) {
+                score++;
+            }
+        }
+
         return score;
+    }
+
+    private String getUserNickname() {
+        EditText editText = findViewById(R.id.editText);
+        return editText.getText().toString();
+    }
+
+    private int getQuestionsCount() {
+        return radioButtonsQA.size() + checkBoxQA.size();
     }
 
     public void submit(View view) {
         int score = getScore();
-        String title = "";
-        String bodyMessage = "";
-        if (score == questionsAnswers.size()) {
-            title = "Congratulations!!";
-            bodyMessage = "Perfect score " + score + "/" + questionsAnswers.size();
-        } else if (score == questionsAnswers.size() - 1) {
-            title = "Almost there!";
-            bodyMessage = "You scored " + score + "/" + questionsAnswers.size();
+        String nickname = getUserNickname();
+        String message;
+
+        int maxScore = getQuestionsCount();
+        if (score == maxScore) {
+            message = getString(R.string.responsePerfect, nickname, score, maxScore);
+        } else if (score == maxScore - 1) {
+            message = getString(R.string.responseAlmostThere, nickname, score, maxScore);
         } else {
-            title = "Try again!";
-            bodyMessage = "You scored " + score + "/" + questionsAnswers.size();
+            message = getString(R.string.responseTryAgain, nickname, score, maxScore);
         }
 
-        AlertDialog.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-        } else {
-            builder = new AlertDialog.Builder(this);
-        }
-        builder.setTitle(title)
-                .setMessage(bodyMessage)
-                .setNegativeButton(android.R.string.ok, null)
-                .show();
+        Context context = getApplicationContext();
+        CharSequence text = message;
+        int duration = Toast.LENGTH_LONG;
+        Toast.makeText(context, text, duration).show();
     }
 }
