@@ -45,4 +45,14 @@
     <string name="responsePerfect">Congratz %s!! Perfect score %d/%d</string>
     <string name="responseAlmostThere">Almost there %s! You scored %d/%d</string>
     <string name="responseTryAgain">Try again %s! You scored %d/%d</string>
+
+    <!-- Content description -->
+    <string name="contentDescriptionIntro">Lord of the rings intro logo</string>
+    <string name="contentDescriptionRing">Ring</string>
+    <string name="contentDescriptionWizards">Wizards</string>
+    <string name="contentDescriptionWitchKing">Witch King</string>
+    <string name="contentDescriptionEowyn">Eowyn</string>
+    <string name="contentDescriptionArwen">Arwen</string>
+    <string name="contentDescriptionCelebrimbor">Celebrimbor</string>
+    <string name="contentDescriptionSauron">Sauron</string>
 </resources>

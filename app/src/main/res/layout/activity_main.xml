@@ -15,6 +15,7 @@
             android:id="@+id/introImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/contentDescriptionIntro"
             android:scaleType="fitStart"
             android:src="@drawable/intro" />
 
@@ -40,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/teaser"/>
+                android:text="@string/teaser" />
 
             <!-- spacing view -->
             <View style="@style/DividerView" />
@@ -105,6 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:contentDescription="@string/contentDescriptionRing"
                 android:scaleType="fitXY"
                 android:src="@drawable/ring" />
 
@@ -148,6 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:contentDescription="@string/contentDescriptionWizards"
                 android:scaleType="fitXY"
                 android:src="@drawable/wizards" />
 
@@ -191,6 +194,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:contentDescription="@string/contentDescriptionIntro"
                 android:scaleType="fitXY"
                 android:src="@drawable/witch_king" />
 
@@ -238,6 +242,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:contentDescription="@string/contentDescriptionEowyn"
                     android:src="@drawable/eowyn" />
 
                 <ImageView
@@ -246,6 +251,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/generalPadding"
                     android:layout_weight="1"
+                    android:contentDescription="@string/contentDescriptionArwen"
                     android:src="@drawable/arwen" />
             </LinearLayout>
 
@@ -293,6 +299,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:contentDescription="@string/contentDescriptionCelebrimbor"
                     android:src="@drawable/celebrimbor" />
 
                 <ImageView
@@ -301,6 +308,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/generalPadding"
                     android:layout_weight="1"
+                    android:contentDescription="@string/contentDescriptionSauron"
                     android:src="@drawable/sauron" />
             </LinearLayout>
 
