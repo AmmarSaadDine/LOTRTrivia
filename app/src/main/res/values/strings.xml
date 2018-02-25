@@ -2,6 +2,14 @@
     <string name="app_name">LORD OF THE RINGS TRIVIA</string>
     <string name="nickNameRequest">Please enter a nick name</string>
     <string name="teaser">Can you answer these questions?</string>
+    <string name="submit">Check Answers</string>
+
+
+    <!-- Free text questions, hints and answers -->
+    <!--question 1-->
+    <string name="tq1">Who is the main villain in Lord of the Rings novels?</string>
+    <string name="tq1a1">sauron</string>
+    <string name="tq1Hint">Please write your answer here</string>
 
     <!-- Check box questions and answers -->
     <!--question 1-->
@@ -32,13 +40,10 @@
     <string name="q4a1">Éowyn the shield maiden</string>
     <string name="q4a2">Arwen Undómiel</string>
 
-
     <!--question 5-->
     <string name="q5">Who created the 3 Rings of the Elves?</string>
     <string name="q5a1">Celebrimbor</string>
     <string name="q5a2">Sauron</string>
-
-    <string name="submit">Check Answers</string>
 
     <!-- Responses to score -->
 

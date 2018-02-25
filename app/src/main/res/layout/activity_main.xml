@@ -34,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/generalPadding"
-                android:hint="@string/nickNameRequest" />
+                android:hint="@string/nickNameRequest"
+                android:inputType="textPersonName"/>
 
             <!-- Teaser text -->
 
@@ -47,6 +48,25 @@
             <View style="@style/DividerView" />
 
             <!-- All questions -->
+
+            <!-- Free text questions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/questionAnswerVerticalMargin"
+                android:text="@string/tq1" />
+
+            <EditText
+                android:id="@+id/tq1"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/generalPadding"
+                android:hint="@string/tq1Hint"
+                android:inputType="text"/>
+
+            <!-- spacing view -->
+            <View style="@style/DividerView" />
 
             <!-- Check box questions -->
 

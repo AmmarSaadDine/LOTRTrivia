@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     // A map representing the answers for the check boxes questions (multiple answers are right)
     private Map<Integer, List<Integer>> checkBoxQA = new HashMap<>();
 
+    // A map representing the answers for the free text questions (edit text questions)
+    private Map<Integer, String> freeTextQA = new HashMap<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         // init question/answers maps
         initRadioButtonsQAMap();
         initCheckBoxQAMap();
+        initFreeTextQAMap();
 
         // Prepare all the images for the questions
         final ImageView introImageView = findViewById(R.id.introImage);
@@ -100,18 +104,34 @@ public class MainActivity extends AppCompatActivity {
         checkBoxQA.put(R.id.cbq1, list1);
     }
 
+    private void initFreeTextQAMap() {
+        freeTextQA = new HashMap<>();
+        freeTextQA.put(R.id.tq1, getString(R.string.tq1a1).toLowerCase());
+    }
+
     private int getScore() {
+        return getScoreForFreeTexQuestions()
+                + getScoreForCheckBoxesQuestions()
+                + getScoreForRadioButtonsQuestions();
+    }
+
+    private int getScoreForRadioButtonsQuestions() {
         int score = 0;
 
-        // collect score for radio groups questions
+        // loop through all radio groups questions
         for (Map.Entry<Integer, Integer> entry : radioButtonsQA.entrySet()) {
             RadioGroup questionGroup = findViewById(entry.getKey());
             if (questionGroup.getCheckedRadioButtonId() == entry.getValue()) {
                 score++;
             }
         }
+        return score;
+    }
 
-        // collect score for check boxes questions
+    private int getScoreForCheckBoxesQuestions() {
+        int score = 0;
+
+        // loop through all check boxs questions
         for (Map.Entry<Integer, List<Integer>> entry : checkBoxQA.entrySet()) {
             LinearLayout questionGroupView = findViewById(entry.getKey());
             List<Integer> rightAnswers = entry.getValue();
@@ -126,17 +146,30 @@ public class MainActivity extends AppCompatActivity {
                 score++;
             }
         }
+        return score;
+    }
 
+    private int getScoreForFreeTexQuestions() {
+        int score = 0;
+
+        // loop through all free text questions
+        for (Map.Entry<Integer, String> entry : freeTextQA.entrySet()) {
+            EditText editText = findViewById(entry.getKey());
+            String currentAnswer = editText.getText().toString().toLowerCase();
+            if (currentAnswer.equals(entry.getValue())) {
+                score++;
+            }
+        }
         return score;
     }
 
     private String getUserNickname() {
         EditText editText = findViewById(R.id.editText);
-        return editText.getText().toString();
+        return editText.getText().toString().trim();
     }
 
     private int getQuestionsCount() {
-        return radioButtonsQA.size() + checkBoxQA.size();
+        return radioButtonsQA.size() + checkBoxQA.size() + freeTextQA.size();
     }
 
     public void submit(View view) {
